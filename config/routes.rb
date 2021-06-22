@@ -9,5 +9,8 @@ Rails.application.routes.draw do
 
   # Application routes
   get "/applications" => "applications#index"
-  
+  post "/applications" => "applications#create"
+  get "/applications/:id" => "applications#show"
+  patch "/applications/:id" => "applications#update"
+  delete "/applications/:id" => "applications#destroy"
 end

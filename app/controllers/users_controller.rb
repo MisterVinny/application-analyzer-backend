@@ -17,7 +17,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    if params[:id].to_i == current_user.id.to_i
+    if params[:id].to_i == current_user.id
       user = User.find(params[:id])
       render json: user.as_json
     else
@@ -27,7 +27,7 @@ class UsersController < ApplicationController
   end
   
   def update
-    if params[:id].to_i == current_user.id.to_i
+    if params[:id].to_i == current_user.id
       user = User.find(params[:id])
       user.username = params[:username] || user.username
       user.address = params[:address] || user.address
@@ -45,7 +45,7 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    if params[:id].to_i == current_user.id.to_i
+    if params[:id].to_i == current_user.id
       user = User.find(params[:id])
       user.destroy
       render json: { message: "User has been successfully deleted." }
