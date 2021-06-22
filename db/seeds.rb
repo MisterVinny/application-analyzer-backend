@@ -1,8 +1,99 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
 
+applications = Application.create!([
+  {
+    user_id: 1,
+    employer: "Microsoft",
+    address: "One Microsoft Way, Redmond, WA 98052",
+    position: "Junior ruby developer",
+    date: "06-22-2021",
+    contact: "roger miller",
+    email: "rmiller@msn.com",
+    followup: true,
+    method: "direct",
+    interviews: 0,
+    status: "pending",
+    enthusiasm: 8,
+    confidence: 6,
+    notes: "If I don't get this one job, I give up."
+  },
+  {
+    user_id: 2,
+    employer: "CareerScore",
+    address: "1010 Ne 2Nd Ave, Miami, FL 33132",
+    position: "Junior fullstack developer",
+    date: "06-23-2021",
+    contact: "samantha bennington",
+    email: "sam@gmail.com",
+    followup: true,
+    method: "indeed",
+    interviews: 2,
+    status: "accepted",
+    enthusiasm: 9,
+    confidence: 3,
+    notes: "It looks like a lot on paper, I'll probably never get this."
+  },
+  {
+    user_id: 2,
+    employer: "Starbucks",
+    address: "7474 E State St, Rockford, IL 61108",
+    position: "Barista",
+    date: "07/01/2021",
+    contact: "cynthia snodgrass",
+    email: "cyn@gmail.com",
+    followup: false,
+    method: "glassdoor",
+    interviews: 1,
+    status: "rejected",
+    enthusiasm: 2,
+    confidence: 8,
+    notes: "Decent employer, dumpy position, this is my last resort."
+  },
+  {
+    user_id: 2,
+    employer: "itransition",
+    address: "3900 S Wadsworth Blvd #485, Lakewood, CO 80235",
+    position: "Junior front end engineer",
+    date: "02-07-2021",
+    contact: "bob doe",
+    email: "bob@gmail.com",
+    followup: false,
+    method: "glassdoor",
+    interviews: 0,
+    status: "pending",
+    enthusiasm: 6,
+    confidence: 5,
+    notes: "Grunt work, but could probably do it."
+  },
+  {
+    user_id: 3,
+    employer: "Netguru",
+    address: "1010 W Layton Ave, Milwaukee, WI 53221",
+    position: "Jr software engineer back end",
+    date: "06-01-2021",
+    contact: "stu paddington",
+    email: "stu@gmail.com",
+    followup: true,
+    method: "indeed",
+    interviews: 1,
+    status: "rejected",
+    enthusiasm: 9,
+    confidence: 4,
+    notes: "Confidence is low but the position was noted as allowing for training."
+  },
+  {
+    user_id: 3,
+    employer: "Epic Systems",
+    address: "1979 Milky Way, Verona, WI 53593",
+    position: "Junior fullstack developer",
+    date: "06-02-2021",
+    contact: "tyrus benton",
+    email: "ty@gmail.com",
+    followup: true,
+    method: "linkedin",
+    interviews: 5,
+    status: "pending",
+    enthusiasm: 10,
+    confidence: 3,
+    notes: "Tyrus said to follow up via call on the 23rd of June 2021."
+  }
+])
