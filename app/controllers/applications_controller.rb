@@ -4,7 +4,7 @@ class ApplicationsController < ApplicationController
 
   def index
     applications = Application.where("user_id = ?", current_user.id)
-    render json: applications.as_json
+    render json: applications
   end
   
   def create

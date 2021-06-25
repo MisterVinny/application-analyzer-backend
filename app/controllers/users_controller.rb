@@ -21,9 +21,8 @@ class UsersController < ApplicationController
       user = User.find(params[:id])
       render json: user.as_json
     else
-      render json: { errors: "Unauthorized to view content." }, status: :unauthorized
+      render json: { errors: "Unauthorized to view user." }, status: :unauthorized
     end
-    
   end
   
   def update
@@ -32,15 +31,13 @@ class UsersController < ApplicationController
       user.username = params[:username] || user.username
       user.address = params[:address] || user.address
       user.email = params[:email] || user.email
-  
       if user.save
         render json: { message: "User updated successfully" }, status: :ok
       else
         render json: { errors: user.errors.full_messages }, status: :bad_request
       end
-
     else
-      render json: { errors: "Unauthorized to edit content." }, status: :unauthorized
+      render json: { errors: "Unauthorized to edit user." }, status: :unauthorized
     end
   end
 
@@ -52,8 +49,5 @@ class UsersController < ApplicationController
     else
       render json: { errors: "Unauthorized to delete user." }, status: :unauthorized
     end
-
   end
-  
-  
 end
