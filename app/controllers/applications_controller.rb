@@ -25,7 +25,7 @@ class ApplicationsController < ApplicationController
       notes: params[:notes]
     })
     if application.save
-      render json: { message: "Application added successfully." }, status: :ok
+      render json: application, status: :ok
     else
       render json: { errors: application.errors.full_messages }, status: :bad_request
     end
@@ -58,7 +58,7 @@ class ApplicationsController < ApplicationController
       application.notes = params[:notes] || application.notes
 
       if application.save
-        render json: { message: "Application updated successfully." }, status: :ok
+        render json: application, status: :ok
       else
         render json: { errors: application.errors.full_messages }, status: :bad_request
       end
