@@ -36,7 +36,9 @@ class UsersController < ApplicationController
 
   def destroy
     user = current_user
+    applications = Application.where("user_id = ?", current_user.id)
+    applications.destroy_all
     user.destroy
-    render json: { message: "User has been successfully deleted." }
+    render json: { message: "User, and all associated applications, has been successfully deleted." }
   end
 end
