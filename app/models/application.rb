@@ -7,5 +7,7 @@ class Application < ApplicationRecord
   validates :method, presence: true
   validates :enthusiasm, presence: true, numericality: {only_integer: true}
   validates :confidence, presence: true, numericality: {only_integer: true}
-
+  validates :followup, inclusion: { in: [ true, false ], message: "must be true or false" }
+  validates :status, presence: true
+  validates :interviews, numericality: { greater_than_or_equal_to: 0 }
 end
