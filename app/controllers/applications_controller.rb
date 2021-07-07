@@ -3,7 +3,7 @@ class ApplicationsController < ApplicationController
   before_action :authenticate_user
 
   def index
-    applications = Application.where("user_id = ?", current_user.id)
+    applications = Application.where("user_id = ?", current_user.id) #current_user.applications
     render json: applications
   end
   

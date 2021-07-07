@@ -10,4 +10,8 @@ class Application < ApplicationRecord
   validates :followup, inclusion: { in: [ true, false ], message: "must be true or false" }
   validates :status, presence: true
   validates :interviews, numericality: { greater_than_or_equal_to: 0 }
+
+  #for geocoder
+  geocoded_by :address
+  after_validation :geocode
 end
